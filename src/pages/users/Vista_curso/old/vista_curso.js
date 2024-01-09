@@ -19,6 +19,7 @@ import VistaCursoContenidoInfo from "./contenido_info";
 import MessageSnackbar from "../../../../components/Snackbar/snackbar";
 import Vimeo from "@u-wave/react-vimeo";
 import MetaTags from "react-meta-tags";
+import urlPage from "../../../../config/url";
 
 const useStyles = makeStyles((theme) => ({
   background: {
@@ -131,7 +132,7 @@ export default function VistaCurso(props) {
   return (
     <Box>
       <MetaTags>
-        <title>UNILINE</title>
+        <title>AB Cloud</title>
         <meta
           id="meta-description"
           name="description"
@@ -146,7 +147,7 @@ export default function VistaCurso(props) {
         <meta
           id="og-url"
           property="og:url"
-          content={"https://uniline.online/curso/" + cursos.course.slug}
+          content={`${urlPage}/curso/${cursos.course.slug}`}
         />
       </MetaTags>
       <Box

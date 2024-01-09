@@ -1,4 +1,4 @@
-const urlPage = 'https://uniline.online';
+const urlPage = 'https://abcloud.com.mx';
 
 
 export default urlPage

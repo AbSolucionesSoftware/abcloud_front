@@ -21,6 +21,7 @@ import Typography from "@material-ui/core/Typography";
 import { useDropzone } from "react-dropzone";
 import clienteAxios from "../../../../../config/axios";
 import { NotificationCursoContext } from "../../../../../context/NotificationCursoCtx";
+import urlPage from "../../../../../config/url";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -345,7 +346,7 @@ export default function NewNotification({ course, datos, isEditing }) {
             name="url"
             onChange={getFields}
             value={values.url}
-            placeholder="https://www.uniline.online"
+            placeholder={`${urlPage}/`}
           />
         </DialogContent>
         <DialogActions>

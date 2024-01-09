@@ -121,8 +121,8 @@ export default function CardBanner({
                   image={banner.image_desktop}
                   title={
                     banner.course_name
-                      ? `banner uniline ${banner.course_name}`
-                      : `banner uniline ${banner.key_desktop}`
+                      ? `banner ${banner.course_name}`
+                      : `banner ${banner.key_desktop}`
                   }
                 />
                 <CardContent>

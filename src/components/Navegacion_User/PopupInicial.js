@@ -40,13 +40,13 @@ export default function PopupModalPrincipal({ ready }) {
   const handleClose = () => {
     setOpen(false);
     localStorage.setItem(
-      "modal_uniline",
+      "modal_abcloud",
       JSON.stringify([{ ...dataModal, open: true }])
     );
   };
 
   useEffect(() => {
-    const modal = JSON.parse(localStorage.getItem("modal_uniline"));
+    const modal = JSON.parse(localStorage.getItem("modal_abcloud"));
     if (modal && !modal[0].open) {
       setDataModal(modal[0]);
       setTimeout(() => {
@@ -84,7 +84,7 @@ export default function PopupModalPrincipal({ ready }) {
           >
             {dataModal.image ? (
               <img
-                alt="modal uniline"
+                alt="modal abcloud"
                 src={dataModal.image}
                 style={{ maxHeight: "100%", maxWidth: "100%" }}
               />
@@ -137,7 +137,7 @@ export default function PopupModalPrincipal({ ready }) {
           >
             {dataModal.image_devices ? (
               <img
-                alt="modal uniline"
+                alt="modal abcloud"
                 src={dataModal.image_devices}
                 style={{ maxHeight: "100%", maxWidth: "100%" }}
               />

@@ -25,9 +25,6 @@ export const styleQuestions = (theme) => {
       //   border: "1px solid",
       marginTop: "auto",
       marginBottom: "auto",
-      boxShadow: `-webkit-box-shadow: 0px -1px 5px 0px rgba(0,0,0,1);
-      -moz-box-shadow: 0px -1px 5px 0px rgba(0,0,0,1);
-      box-shadow: 0px -1px 5px 0px rgba(0,0,0,1);`,
     },
     title: {
       fontSize: "30px",
@@ -36,7 +33,6 @@ export const styleQuestions = (theme) => {
       fontWeight: "bold",
       marginBottom: "-10px",
       marginTop: "15px",
-      color: "rgb(60,0,142)"
     },
     subTitle: {
       fontSize: "20px",
@@ -62,7 +58,7 @@ export const styleQuestions = (theme) => {
       },
     },
     buttonNext: {
-      backgroundColor: "rgb(60,0,142)",
+      //backgroundColor: "rgb(60,0,142)",
       [theme.breakpoints.down("sm")]: {
         width: "90%",
         height: "40px",

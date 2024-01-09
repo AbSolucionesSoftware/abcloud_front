@@ -18,6 +18,7 @@ import { useDropzone } from "react-dropzone";
 import clienteAxios from "../../../config/axios";
 import AddAlertIcon from '@material-ui/icons/AddAlert';
 import { NotificationCursoContext } from "../../../context/NotificationCursoCtx";
+import urlPage from "../../../config/url";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -129,7 +130,7 @@ export default function NewNotificationAdmin({ datos, isEditing }) {
     formData.append("sended", sended);
     formData.append("id_course", "");
     formData.append("id_teacher", "");
-    formData.append("teacher_name", "UNILINE");
+    formData.append("teacher_name", "AB Cloud");
 
     if (sended) {
       setLoadingSend(true);
@@ -317,7 +318,7 @@ export default function NewNotificationAdmin({ datos, isEditing }) {
             name="url"
             onChange={getFields}
             value={values.url}
-            placeholder="https://www.uniline.online"
+            placeholder={`${urlPage}/`}
           />
         </DialogContent>
         <DialogActions>

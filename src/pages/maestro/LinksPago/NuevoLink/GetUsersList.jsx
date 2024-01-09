@@ -60,7 +60,7 @@ export default function GetUsersList({
           <TextField
             {...params}
             margin="dense"
-            label="Usuario uniline"
+            label="Usuario"
             variant="outlined"
             placeholder="Cargando..."
             InputProps={{
@@ -121,7 +121,7 @@ export default function GetUsersList({
           {...params}
           margin="dense"
           onChange={(e) => setInput(e.target.value)}
-          label="Usuario uniline"
+          label="Usuario"
           value={input}
           variant="outlined"
           placeholder="Buscar por nombre, telefono o email"

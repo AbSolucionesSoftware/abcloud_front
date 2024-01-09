@@ -10,6 +10,8 @@ import InfoPrincipal from "./InfoPrincipal";
 import VideoPresentacion from "./VideoPresentacion";
 import DetallesCurso from "./DetallesCurso";
 import "./styles.css";
+import urlPage from "../../../config/url";
+import CustomLoader from "../../../components/CustomLoader";
 
 const useStyles = makeStyles((theme) => ({
   background: {
@@ -74,34 +76,24 @@ export default function VistaCurso(props) {
     return <Error500 error={error.message} />;
   }
 
-  if (cursos.length === 0) {
-    return (
-      <Box height="50vh" className="container-animation-loading">
-        <div className="loading loading03">
-          <span>U</span>
-          <span>N</span>
-          <span>I</span>
-          <span>L</span>
-          <span>I</span>
-          <span>N</span>
-          <span>E</span>
-        </div>
-      </Box>
-    );
-  }
+  if (cursos.length === 0) return <CustomLoader text="CARGANDO..." />;
 
   if (!cursos.course.publication) props.history.push("/");
 
   return (
     <Box>
       <MetaTags>
-        <title>UNILINE</title>
+        <title>AB Cloud</title>
         <meta
           id="meta-description-curso"
           name="description"
           content={cursos.course.description}
         />
-        <meta id="og-title-curso" property="og:title" content={cursos.course.title} />
+        <meta
+          id="og-title-curso"
+          property="og:title"
+          content={cursos.course.title}
+        />
         <meta
           id="og-image-curso"
           property="og:image"
@@ -110,7 +102,7 @@ export default function VistaCurso(props) {
         <meta
           id="og-url-curso"
           property="og:url"
-          content={"https://uniline.online/curso/" + cursos.course.slug}
+          content={`${urlPage}/curso/${cursos.course.slug}`}
         />
       </MetaTags>
       <Scroll showBelow={250} bottomMargin={62} />

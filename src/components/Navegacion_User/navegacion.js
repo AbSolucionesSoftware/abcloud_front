@@ -31,18 +31,16 @@ import HowToRegIcon from "@material-ui/icons/HowToReg";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import SchoolIcon from "@material-ui/icons/School";
 import useStyles from "./styles";
-import ImagenLogo from "../../images/uniline2.png";
-import ImagenLogoDark from "../../images/unilineDark.png";
-import ImagenAzul from "../../images/unilineAzul.png";
 import CarritoNavbar from "./carrito";
 import CategoriesContainer from "./NavSubcategories";
-import { Event, Devices } from "@material-ui/icons";
+import { Devices } from "@material-ui/icons";
 import Notifications from "../Notifications/Notifications";
 import BottomNavigationResponsive from "./NavegacionResponsive";
 import { getAuth, signOut } from "firebase/auth";
 import { obtenerTokenFCM } from "../Firebase/firebaseInit";
 import clienteAxios from "../../config/axios";
 import CustomAvatar from "../CustomAvatar";
+import ABHorizIcon from "../../Icons/ABHorizIcon";
 
 function NavegacionUsuario(props) {
   const [darkTheme, setDarkTheme] = props.tema;
@@ -171,7 +169,7 @@ function NavegacionUsuario(props) {
 
   return (
     <div>
-      <AppBar position="fixed" className={classes.appbar}>
+      <AppBar position="fixed" className={classes.appbar} elevation={0}>
         <Toolbar variant="dense" style={{ padding: "0px 8px" }}>
           <Hidden mdUp>
             <IconButton
@@ -179,26 +177,21 @@ function NavegacionUsuario(props) {
               aria-label="show more"
               aria-haspopup="true"
               onClick={handleDrawerAction}
-              color="inherit"
+              color="primary"
             >
               <MenuIcon />
             </IconButton>
           </Hidden>
-          {/* <Hidden mdUp>
-              <CategoriasResponsive />
-            </Hidden> */}
           <Hidden smDown>
-            <Box className={classes.logo}>
-              <img
-                alt="logo navbar"
-                src={darkTheme ? ImagenLogoDark : ImagenLogo}
-                className={classes.imagen}
-              />
-            </Box>
+            <ABHorizIcon
+              size={10}
+              color="primary"
+              style={{ marginRight: 10 }}
+            />
           </Hidden>
           <div className={classes.search}>
             <InputBase
-              placeholder="¿Qué quieres aprender hoy?"
+              placeholder="Buscar"
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,
@@ -209,28 +202,15 @@ function NavegacionUsuario(props) {
               onKeyPress={pressEnter}
             />
             <div className={classes.grow} />
-            <IconButton size="small" color="inherit" onClick={() => buscarBD()}>
+            <IconButton size="small" color="primary" onClick={() => buscarBD()}>
               <SearchIcon />
             </IconButton>
           </div>
           <div className={classes.grow} />
           <Hidden smDown>
             <Button
-              style={{ textTransform: "none", backgroundColor: "#ff1744" }}
-              color="inherit"
-              component={Link}
-              to="/apps"
-              variant="contained"
-              size="small"
-              className={classes.marginButton}
-              disableElevation
-              startIcon={<Devices />}
-            >
-              Necesito una App
-            </Button>
-            <Button
               style={{ textTransform: "none" }}
-              color="inherit"
+              color="primary"
               component={Link}
               to="/"
               className={classes.marginButton}
@@ -239,18 +219,21 @@ function NavegacionUsuario(props) {
               Inicio
             </Button>
             <Button
-              style={{ textTransform: "none" }}
-              color="inherit"
+              style={{ textTransform: "none" /* backgroundColor: "#ff1744" */ }}
+              color="primary"
               component={Link}
-              to="/consultoria"
+              to="/apps"
+              //variant="contained"
+              size="small"
               className={classes.marginButton}
-              /* startIcon={<Event />} */
+              disableElevation
+              //startIcon={<Devices />}
             >
-              Consultoria
+              Apps
             </Button>
             <Button
               style={{ textTransform: "none" }}
-              color="inherit"
+              color="primary"
               component={Link}
               to="/buscar-certificado"
               className={classes.marginButton}
@@ -262,11 +245,10 @@ function NavegacionUsuario(props) {
               <Fragment>
                 <Button
                   style={{ textTransform: "none" }}
-                  color="inherit"
+                  color="primary"
                   component={Link}
                   to="/registro"
                   className={classes.marginButton}
-                  variant="outlined"
                   size="small"
                 >
                   Regístrate
@@ -274,14 +256,13 @@ function NavegacionUsuario(props) {
                 <Button
                   style={{
                     textTransform: "none",
-                    backgroundColor: "#ff1744",
+                    //backgroundColor: "#ff1744",
                   }}
-                  color="secondary"
+                  color="primary"
                   disableElevation
                   component={Link}
                   to="/login"
                   className={classes.marginButton}
-                  variant="contained"
                   size="small"
                 >
                   Inicia Sesión
@@ -292,7 +273,7 @@ function NavegacionUsuario(props) {
             {token ? (
               <Button
                 style={{ textTransform: "none" }}
-                color="inherit"
+                color="primary"
                 component={Link}
                 to="/mis_cursos"
                 className={classes.marginButton}
@@ -306,7 +287,7 @@ function NavegacionUsuario(props) {
             {/* {token && user.rol === "Maestro" ? (
                 <Button
                   style={{ textTransform: "none" }}
-                  color="inherit"
+                  color="primary"
                   component={Link}
                   to="/instructor/cursos"
                   className={classes.marginButton}
@@ -321,7 +302,7 @@ function NavegacionUsuario(props) {
               <Fragment>
                 <IconButton
                   size="small"
-                  color="inherit"
+                  color="primary"
                   component={Link}
                   to="/carrito"
                 >
@@ -355,7 +336,7 @@ function NavegacionUsuario(props) {
             {!token ? (
               <IconButton
                 aria-label="show 17 theme config"
-                color="inherit"
+                color="primary"
                 onClick={darkModeAction}
               >
                 {darkTheme ? <Brightness5Icon /> : <BrightnessMediumIcon />}
@@ -367,7 +348,7 @@ function NavegacionUsuario(props) {
           {/* <Hidden mdUp>
               <IconButton
                 aria-label="show 17 new notifications"
-                color="inherit"
+                color="primary"
                 component={Link}
                 to="/carrito"
               >
@@ -392,13 +373,7 @@ function NavegacionUsuario(props) {
         }}
       >
         <div className={classes.drawerHeader}>
-          <Box className={classes.logoResponsive}>
-            <img
-              alt="logo navbar"
-              src={darkTheme ? ImagenLogoDark : ImagenAzul}
-              className={classes.imagen}
-            />
-          </Box>
+          <ABHorizIcon size={10} color="primary" style={{ marginRight: 10 }} />
           <div className={classes.grow} />
           <IconButton onClick={handleDrawerAction}>
             <ChevronLeftIcon />
@@ -421,18 +396,7 @@ function NavegacionUsuario(props) {
             <ListItemIcon>
               <Devices />
             </ListItemIcon>
-            <ListItemText primary="Necesito una App" />
-          </ListItem>
-          <ListItem
-            button
-            component={Link}
-            to="/consultoria"
-            onClick={handleDrawerAction}
-          >
-            <ListItemIcon>
-              <Event />
-            </ListItemIcon>
-            <ListItemText primary="Consultoria" />
+            <ListItemText primary="Apps" />
           </ListItem>
           <ListItem
             button

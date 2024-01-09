@@ -61,7 +61,7 @@ export default function SubirImagenBannerDevices({
       return;
     } else if (
       preview &&
-      preview.includes("https://cursos-uniline.s3.us-west-1.amazonaws.com")
+      preview.includes(process.env.REACT_APP_URL_AWS)
     ) {
       return;
     }

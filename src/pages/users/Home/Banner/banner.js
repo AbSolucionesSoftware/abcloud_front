@@ -4,6 +4,7 @@ import Carousel from "react-material-ui-carousel";
 import clienteAxios from "../../../../config/axios";
 import BannerDefault from "./BannerDefault";
 import "./banner.scss";
+import CustomLoader from "../../../../components/CustomLoader";
 
 const useStyles = makeStyles((theme) => ({
   imagen: {
@@ -72,27 +73,15 @@ export default function Banner(props) {
   }, [obtenerBanners]);
 
   if (loading) {
-    return (
-      <Box height="65vh" className="container-animation-loading">
-        <div className="loading loading03">
-          <span>U</span>
-          <span>N</span>
-          <span>I</span>
-          <span>L</span>
-          <span>I</span>
-          <span>N</span>
-          <span>E</span>
-        </div>
-      </Box>
-    );
+    return <CustomLoader text="CARGANDO..." />;
   } else if (loaded && banners.length === 0) {
     return <BannerDefault />;
   }
 
   const redireccion = (banner) => {
-    if(!banner.course_ref) return
-    props.props.history.push(`/curso/${banner.course_ref}`)
-  }
+    if (!banner.course_ref) return;
+    props.props.history.push(`/curso/${banner.course_ref}`);
+  };
 
   return (
     <Fragment>
@@ -105,7 +94,10 @@ export default function Banner(props) {
                 style={{ backgroundImage: `url(${banner.image_desktop})` }}
               /> */}
               <Hidden xsDown>
-                <Box className={classes.container2} onClick={() => redireccion(banner)}>
+                <Box
+                  className={classes.container2}
+                  onClick={() => redireccion(banner)}
+                >
                   <img
                     alt={`imagen-${banner.order_number}`}
                     src={banner.image_desktop}
@@ -117,7 +109,10 @@ export default function Banner(props) {
                 {!banner.key_devices ? (
                   <BannerDefault />
                 ) : (
-                  <Box className={classes.container2} onClick={() => redireccion(banner)}>
+                  <Box
+                    className={classes.container2}
+                    onClick={() => redireccion(banner)}
+                  >
                     <img
                       alt={`imagen-${banner.order_number}`}
                       src={banner.image_devices}

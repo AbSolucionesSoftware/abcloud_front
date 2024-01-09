@@ -9,9 +9,9 @@ import PopupModalPrincipal from "../Navegacion_User/PopupInicial";
 export default function Notifications({ responsive }) {
   const token = localStorage.getItem("token");
   const localNotifications = JSON.parse(
-    localStorage.getItem("notifications_uniline")
+    localStorage.getItem("notifications_abcloud")
   );
-  const localModal = JSON.parse(localStorage.getItem("modal_uniline"));
+  const localModal = JSON.parse(localStorage.getItem("modal_abcloud"));
   const user = JSON.parse(localStorage.getItem("student"));
   const [loaded, setLoaded] = useState(false);
   const [ready, setReady] = useState(false);
@@ -33,8 +33,8 @@ export default function Notifications({ responsive }) {
           localNotifications
         );
         const result_modal = await updateModal(onlyModal, localModal);
-        localStorage.setItem("notifications_uniline", JSON.stringify(result));
-        localStorage.setItem("modal_uniline", JSON.stringify(result_modal));
+        localStorage.setItem("notifications_abcloud", JSON.stringify(result));
+        localStorage.setItem("modal_abcloud", JSON.stringify(result_modal));
         setReady(true);
       })
       .catch((err) => {

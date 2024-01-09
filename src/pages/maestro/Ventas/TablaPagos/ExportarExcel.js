@@ -128,11 +128,11 @@ const ExportarPagos = ({ data, value }) => {
           Exportar
         </Button>
       }
-      filename={`Ventas uniline de hace ${value} semana`}
+      filename={`Ventas de hace ${value} semana`}
     >
       <ExcelSheet
         data={payments}
-        name={`Ventas uniline de hace ${value} semana`}
+        name={`Ventas de hace ${value} semana`}
       >
         <ExcelColumn label="Fecha" value="fecha" />
         <ExcelColumn label="Estudiante" value="estudiante" />

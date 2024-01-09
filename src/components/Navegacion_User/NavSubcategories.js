@@ -60,7 +60,7 @@ export default function CategoriasContainer() {
   }
 
   return (
-    <Box display="flex" justifyContent="center" width="100%">
+    <Box display="flex" width="100%">
       {categorias.map((category, index) => {
         return <RenderCategorias key={index} category={category} />;
       })}
@@ -90,7 +90,7 @@ const RenderCategorias = ({ category }) => {
         to={`search?category=${category.category}`}
         aria-haspopup="true"
         onMouseOver={handleToggle}
-        color="inherit"
+        color="primary"
         onMouseLeave={handleClose}
         categoria={category.category}
       >

@@ -40,7 +40,7 @@ export default function NotificationComponent() {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const notifications = JSON.parse(
-    localStorage.getItem("notifications_uniline")
+    localStorage.getItem("notifications_abcloud")
   );
 
   const count = notifications.filter((res) => !res.read);
@@ -58,7 +58,7 @@ export default function NotificationComponent() {
 
   return (
     <div>
-      <IconButton aria-describedby={id} color="inherit" onClick={handleClick}>
+      <IconButton aria-describedby={id} color="primary" onClick={handleClick}>
         <Badge badgeContent={count.length} color="secondary">
           <NotificationsIcon fontSize="small" />
         </Badge>
@@ -113,7 +113,7 @@ const ItemNotification = ({ notification, notificaciones, index, handleClose }) 
     let notificationToLS = [...notificaciones];
     notificationToLS.splice(index, 1, notificationUpdated);
     localStorage.setItem(
-      "notifications_uniline",
+      "notifications_abcloud",
       JSON.stringify(notificationToLS)
     );
     if (notification.url) window.open(notification.url, '_blank');

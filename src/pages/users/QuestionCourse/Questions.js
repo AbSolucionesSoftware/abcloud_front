@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Box, Button, makeStyles } from "@material-ui/core";
+import {
+  Box,
+  Button,
+  Container,
+  Paper,
+  Typography,
+  makeStyles,
+} from "@material-ui/core";
 import { styleQuestions } from "./QuestionsStyle";
 import Answers from "./Answers";
 import clienteAxios from "../../../config/axios";
@@ -44,7 +51,7 @@ export default function Questions(props) {
         //Redirect to home - dash
       }
     } catch (error) {
-      console.log(error.response)
+      console.log(error.response);
     }
   };
 
@@ -101,48 +108,58 @@ export default function Questions(props) {
 
   return (
     <div className={classes.fatherContent}>
-      <Box className={classes.content}>
-        <NavQuestion
-          actiallyQuestion={actiallyQuestion}
-          dataQuestions={dataQuestions}
-        />
-        {!calificar ? (
-          <>
-            <p className={classes.title}>
-              Estamos trabajando para ofrecerte mejor contenido de calidad.
-            </p>
-            <p className={classes.subTitle}>Ayúdanos a responder está pequeña encuesta, tomate el tiempo necesario para contestarla.</p>
-          </>
-        ) : (
-          <>
-            <p
-              style={{ textAlign: "center", marginBottom: "20px" }}
-              className={classes.title}
-            >
-              ¿Te gustaría calificar el curso?
-            </p>
-            <p style={{ textAlign: "center" }} className={classes.subTitle}>¡Danos tu opinión para mejorar!</p>
-          </>
-        )}
-
-        {calificar ? (
-          <CalificarCurso
-            setLoading={setLoading}
-            idCurso={idCurso}
-            props={props}
-            slug={slug}
-          />
-        ) : (
-          <ContentQuestions
-            answersSelected={answersSelected}
-            setAnswersSelected={setAnswersSelected}
+      <Container>
+        <Paper variant="outlined">
+          <NavQuestion
             actiallyQuestion={actiallyQuestion}
-            classes={classes}
-            handleClickNextAndFinish={handleClickNextAndFinish}
-            idCurso={idCurso}
+            dataQuestions={dataQuestions}
           />
-        )}
-      </Box>
+          {!calificar ? (
+            <>
+              <Typography className={classes.title} color="primary">
+                Estamos trabajando para ofrecerte mejor contenido de calidad.
+              </Typography>
+              <Typography className={classes.subTitle}>
+                Ayúdanos a responder está pequeña encuesta, tomate el tiempo
+                necesario para contestarla.
+              </Typography>
+            </>
+          ) : (
+            <>
+              <Typography
+                style={{ textAlign: "center", marginBottom: "20px" }}
+                className={classes.title}
+              >
+                ¿Te gustaría calificar el curso?
+              </Typography>
+              <Typography
+                style={{ textAlign: "center" }}
+                className={classes.subTitle}
+              >
+                ¡Danos tu opinión para mejorar!
+              </Typography>
+            </>
+          )}
+
+          {calificar ? (
+            <CalificarCurso
+              setLoading={setLoading}
+              idCurso={idCurso}
+              props={props}
+              slug={slug}
+            />
+          ) : (
+            <ContentQuestions
+              answersSelected={answersSelected}
+              setAnswersSelected={setAnswersSelected}
+              actiallyQuestion={actiallyQuestion}
+              classes={classes}
+              handleClickNextAndFinish={handleClickNextAndFinish}
+              idCurso={idCurso}
+            />
+          )}
+        </Paper>
+      </Container>
     </div>
   );
 }
@@ -155,14 +172,14 @@ function ContentQuestions({
   handleClickNextAndFinish,
   idCurso,
 }) {
-  if (!actiallyQuestion) return <p>a</p>;
+  if (!actiallyQuestion) return <Typography>a</Typography>;
   return (
     <div className={classes.contentQuestion}>
-      <p className={classes.questionStyle}>
+      <Typography className={classes.questionStyle}>
         {" "}
         {actiallyQuestion?.index + 1}.-{" "}
         {actiallyQuestion?.data?.question?.question}
-      </p>
+      </Typography>
       <div
         style={{
           display: "flex",

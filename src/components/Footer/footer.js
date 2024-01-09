@@ -5,7 +5,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Grid, Box, Typography } from "@material-ui/core";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import { Link } from "react-router-dom";
-import ImagenUniline from "../../images/u-normal.png";
 import moment from "moment";
 import {
   EmojiObjectsOutlined,
@@ -17,6 +16,7 @@ import {
   YouTube,
 } from "@material-ui/icons";
 import LinkMaterial from "@material-ui/core/Link";
+import ABIcon from "../../Icons/ABIcon";
 
 const useStyles = makeStyles((theme) => ({
   background: {
@@ -42,10 +42,9 @@ export default function Footer({ darkTheme }) {
       position="relative"
       zIndex="2"
       className={classes.background}
-      boxShadow={3}
-      p={3}
+      p={5}
     >
-      <Grid container spacing={2} justifyContent="space-evenly">
+      <Grid container spacing={5} justifyContent="center">
         <Grid
           item
           md={1}
@@ -56,9 +55,7 @@ export default function Footer({ darkTheme }) {
             justifyContent: "center",
           }}
         >
-          <Box className={classes.imgContainer}>
-            <img alt="Uniline" src={ImagenUniline} className={classes.cover} />
-          </Box>
+          <ABIcon size={10} color="primary" style={{ marginRight: 10 }} />
         </Grid>
         <Grid item>
           <Box>
@@ -69,11 +66,11 @@ export default function Footer({ darkTheme }) {
                 <LinkMaterial
                   target="_blank"
                   rel="noopener"
-                  href="https://www.facebook.com/EscuelaUniline"
+                  href="https://www.facebook.com/ConsultoresABsolucionesempresariales/"
                   color="inherit"
                   underline="none"
                 >
-                  Uniline
+                  AB Cloud
                 </LinkMaterial>
               </Typography>
             </Box>
@@ -84,11 +81,11 @@ export default function Footer({ darkTheme }) {
                 <LinkMaterial
                   target="_blank"
                   rel="noopener"
-                  href="https://www.instagram.com/uniline.online/?hl=es-la"
+                  href="https://www.instagram.com/ab_cloud_soluciones/"
                   color="inherit"
                   underline="none"
                 >
-                  Uniline Online
+                  @ab_cloud_soluciones
                 </LinkMaterial>
               </Typography>
             </Box>
@@ -99,11 +96,11 @@ export default function Footer({ darkTheme }) {
                 <LinkMaterial
                   target="_blank"
                   rel="noopener"
-                  href="https://www.youtube.com/@Unilineonline"
+                  href="https://www.youtube.com/@Consultoresabcloud"
                   color="inherit"
                   underline="none"
                 >
-                  Uniline YT Channel
+                  @Consultoresabcloud
                 </LinkMaterial>
               </Typography>
             </Box>
@@ -160,15 +157,15 @@ export default function Footer({ darkTheme }) {
             <Box display="flex" mb={0.5}>
               <WhatsApp color="action" />
               <Box mr={1} />
-              <Typography>317 129 7626</Typography>
+              <Typography>+52 1 317 389 1962</Typography>
             </Box>
             <Box display="flex" alignItems="center">
               <LocationOnIcon color="action" />
               <Box mr={1} />
               <Box>
-                <Typography>
+                {/* <Typography>
                   Gomez Farias #43 (Planta alta), Col. Centro.
-                </Typography>
+                </Typography> */}
                 <Typography>Autlán de Navarro, Jalisco, México.</Typography>
               </Box>
             </Box>
@@ -176,9 +173,7 @@ export default function Footer({ darkTheme }) {
         </Grid>
       </Grid>
       <Box display="flex" justifyContent="center" mt={2}>
-        <Typography>©AB Cloud</Typography>
-        <Box mx={1} />
-        <Typography>©Uniline {year_footer}</Typography>
+        <Typography>©AB Cloud {year_footer}</Typography>
       </Box>
     </Box>
   );

@@ -36,7 +36,7 @@ export default function PagoPaypal({ order, compra, total }) {
             total: order.total,
             currency: paypalConfig.currency,
           },
-          description: "Compra en UNILINE",
+          description: "Compra en AB Cloud",
           custom: order.customer || "",
           item_list: {
             items: order.items,

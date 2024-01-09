@@ -24,11 +24,11 @@ import {
 import DoneAllIcon from "@material-ui/icons/DoneAll";
 import ShowMoreText from "react-show-more-text";
 import MantenimientoImg from "../../images/Empty.png";
-import imagen from "../../images/uniline3.png";
 import InscripcionTaller from "./inscripcion_taller";
 import useStyles from "./styles";
 import { Link } from "react-router-dom";
 import { ArrowBack } from "@material-ui/icons";
+import ABHorizIcon from "../../Icons/ABHorizIcon";
 
 export default function TallerPage(props) {
   moment.locale("en");
@@ -154,7 +154,7 @@ export default function TallerPage(props) {
         <Box position="fixed" ml={2}>
           <IconButton
             size="medium"
-            style={{color: "#ffff"}}
+            style={{ color: "#ffff" }}
             component={Link}
             to="/"
           >
@@ -181,10 +181,8 @@ export default function TallerPage(props) {
                 textAlign="center"
                 className={classes.containerLogo}
               >
-                <img
-                  className={classes.imagenDimension}
-                  src={imagen}
-                  alt="Imagen de Ulinine"
+                <ABHorizIcon
+                  size={10}
                 />
               </Box>
             </Grid>
@@ -249,7 +247,6 @@ export default function TallerPage(props) {
               </Box>
             </Grid>
           </Grid>
-          
         </Container>
       </div>
       {/* CONTENEDOR DE APREDIZAJES ESPERADOS */}
@@ -334,7 +331,7 @@ export default function TallerPage(props) {
           <Box textAlign="center" p={5}>
             <Box>
               <Typography className={classes.titulo}>
-                Participa en este Taller que ofrece Uniline para ti
+                Participa en este Taller que ofrecemos para ti
               </Typography>
             </Box>
             <Box mt={2}>

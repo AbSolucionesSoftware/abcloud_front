@@ -3,7 +3,7 @@ import { Box, Typography } from "@material-ui/core";
 import moment from "moment";
 import { formatoMexico } from "../../../../config/reuserFunction";
 import { ConsultaContext } from "../Context";
-import ImagenUniline from "../../../../images/unilineAzul.png";
+import ABIcon from "../../../../Icons/ABIcon";
 
 export default function InfoConsulta() {
   moment.locale("es-mx");
@@ -17,11 +17,7 @@ export default function InfoConsulta() {
   return (
     <Box mt={1}>
       <Box display="flex" alignItems="center" height={100} py={1}>
-        <img
-          src={ImagenUniline}
-          alt="logo-uniline"
-          style={{ maxHeight: "100%", maxWidth: "100%" }}
-        />
+        <ABIcon size={10} color="primary" />
       </Box>
       <Typography variant="h6">
         <b>{`${appointment.summary} - ${appointment.product}`}</b>

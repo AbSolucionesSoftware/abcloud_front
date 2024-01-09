@@ -159,11 +159,10 @@ const TablaServiceComponent = ({ sale }) => {
       <Box>
         <Typography color="textSecondary">No hay detalles </Typography>
         <Typography color="textSecondary" variant="body2">
-          Probablemente este pago fue realizado mediante los enlaces de pago
-          con el tipo de artículo "otro" y no esta relacionado a un producto de
-          Uniline
+          Probablemente este pago fue realizado mediante los enlaces de pago con
+          el tipo de artículo "otro" y no esta relacionado a un producto de AB
+          Cloud
         </Typography>
-        
       </Box>
     );
   }

@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     padding: "10px 0px",
   },
   buttonStyle: {
-    backgroundColor: "rgb(60,0,143)",
+    //backgroundColor: "rgb(60,0,143)",
     color: "white",
     padding: "10px 25px",
     fontSize: "14px",
@@ -105,6 +105,7 @@ export default function CalificarCurso({ setLoading, idCurso, props, slug }) {
             className={classes.buttonStyle}
             onClick={() => guardarCalificacionBD()}
             variant="contained"
+            color="primary"
           >
             {!calificacion.comentario && !calificacion.comentario
               ? "Omitir"

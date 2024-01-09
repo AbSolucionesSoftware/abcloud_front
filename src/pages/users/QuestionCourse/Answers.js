@@ -6,6 +6,7 @@ import {
   FormGroup,
   //   FormLabel,
   makeStyles,
+  useTheme,
 } from "@material-ui/core";
 import AdjustIcon from "@material-ui/icons/Adjust";
 import CheckCircleOutlineIcon from "@material-ui/icons/CheckCircleOutline";
@@ -71,6 +72,7 @@ function CheckAnswer({
   idCurso,
   classes
 }) {
+  const theme = useTheme()
   const handleChangeCheck = (ans) => {
     if (check.length > 0) {
       const checkedSelected = answersSelected.filter(
@@ -88,7 +90,7 @@ function CheckAnswer({
   return (
     <FormControlLabel
       style={{
-        border: `1px solid rgb(${check.length > 0 ? "60,0,142" : "217,217,217"})`,
+        border: `1px solid rgb(${check.length > 0 ? theme.palette.primary.main : "217,217,217"})`,
       }}
       className={classes.checkContent}
       control={

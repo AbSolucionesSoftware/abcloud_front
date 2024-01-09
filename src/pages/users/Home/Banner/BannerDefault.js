@@ -1,30 +1,16 @@
 import React, { Fragment } from "react";
-import QueueAnim from "rc-queue-anim";
-import { makeStyles, Grid, Box, Typography } from "@material-ui/core";
-import Carousel from "react-material-ui-carousel";
-import imagenBanner from "../../../../images/banner3.jpg";
-import logoUniline from "../../../../images/uniline3.png";
+import { makeStyles, Box, Typography } from "@material-ui/core";
+import ABHorizIcon from "../../../../Icons/ABHorizIcon";
 
 const useStyles = makeStyles((theme) => ({
-  imagen: {
-    maxHeight: "100%",
-    maxWidth: "100%",
-    borderRadius: "100%",
-  },
   bannerContainer: {
-    minHeight: "65vh",
-    backgroundImage: `url(${imagenBanner})`,
-    backgroundPosition: "center",
+    minHeight: "70vh",
+    backgroundImage: `url(https://source.unsplash.com/random?cursos-online)`,
+    backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
+    backgroundPosition: "center",
     [theme.breakpoints.down("xs")]: {
       minHeight: "90vh",
-    },
-  },
-  imagenLogo: {
-    height: 120,
-    [theme.breakpoints.down("xs")]: {
-      height: 100,
-      width: "100%",
     },
   },
 }));
@@ -34,35 +20,29 @@ export default function BannerDefault() {
 
   return (
     <Fragment>
-      <Carousel interval={5000} indicators={false}>
-        <Grid container className={classes.bannerContainer} display="flex">
-          <Grid item md={6} lg={7} xs={12}>
-            <Box
-              display="flex"
-              justifyContent="center"
-              alignItems="center"
-              height="100%"
-            >
-              <Box p={5}>
-                <QueueAnim delay={700} className="queue-simple">
-                  <Box key="a">
-                    <img
-                      alt="logo uniline"
-                      src={logoUniline}
-                      className={classes.imagenLogo}
-                    />
-                    <Box my={2} style={{ color: "#F9F9F9" }}>
-                      <Typography variant="h4">
-                        <b>APRENDE DESDE CASA EN EL MOMENTO QUE TÚ QUIERAS.</b>
-                      </Typography>
-                    </Box>
-                  </Box>
-                </QueueAnim>
-              </Box>
-            </Box>
-          </Grid>
-        </Grid>
-      </Carousel>
+      <Box
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        className={classes.bannerContainer}
+      >
+        <Box
+          height="70vh"
+          width="100vw"
+          position="absolute"
+          sx={{
+            backgroundColor: "rgba(0,0,0, 0.3)",
+          }}
+        />
+        <Box textAlign="center" zIndex={10}>
+          <ABHorizIcon size={35} />
+          <Box my={2} style={{ color: "#F9F9F9" }}>
+            <Typography variant="h4">
+              <b>APRENDE DESDE CASA EN EL MOMENTO QUE TÚ QUIERAS.</b>
+            </Typography>
+          </Box>
+        </Box>
+      </Box>
     </Fragment>
   );
 }

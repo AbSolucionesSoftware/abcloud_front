@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
 		backgroundColor: theme.palette.background.paper
 	},
 	appBar: {
-		backgroundColor: theme.palette.navbar,
+		backgroundColor: theme.palette.primary,
 		[theme.breakpoints.up('md')]: {
 			width: `calc(100% - ${drawerWidth}px)`,
 			marginLeft: drawerWidth

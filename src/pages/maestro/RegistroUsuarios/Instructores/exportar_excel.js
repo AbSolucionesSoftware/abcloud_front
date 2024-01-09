@@ -37,7 +37,7 @@ function ExportarExcelMaestros({ maestros }) {
                 Exportar
               </Button>
             }
-            filename={`instructores de UNILINE`}
+            filename={`instructores`}
           >
             <ExcelSheet data={data} name="Datos de los instructores">
               <ExcelColumn label="Nombre" value="name" />

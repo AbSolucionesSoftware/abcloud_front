@@ -61,7 +61,7 @@ export default function GetProductosList({
           <TextField
             {...params}
             margin="dense"
-            label="Producto Uniline"
+            label="Producto"
             variant="outlined"
             placeholder="Cargando..."
             InputProps={{
@@ -120,7 +120,7 @@ export default function GetProductosList({
         <TextField
           {...params}
           margin="dense"
-          label="Producto Uniline"
+          label="Producto"
           variant="outlined"
           placeholder="Selecciona uno"
         />

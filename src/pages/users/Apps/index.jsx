@@ -21,7 +21,7 @@ export default function AppsPage() {
           </Typography>
           <br />
           <Typography variant="h6">
-            ¿Buscas una aplicación a medida? En Uniline, convertimos tus ideas
+            ¿Buscas una aplicación a medida? En ABCloud, convertimos tus ideas
             en soluciones digitales personalizadas. Desde la concepción hasta la
             realidad, creamos la herramienta perfecta para potenciar tu visión.
             ¡Hablemos y llevemos tu proyecto al siguiente nivel!

@@ -36,8 +36,6 @@ import 'firebase/auth';
 import 'firebase/firestore'; */
 import ListaContenido from "./lista";
 import ContenidoDashboard from "./contenido_dashboard";
-import ImagenLogo from "../../../images/uniline2.png";
-import ImagenLogoDark from "../../../images/unilineDark.png";
 import { useStyles } from "./styles";
 import Spin from "../../../components/Spin/spin";
 import MessageSnackbar from "../../../components/Snackbar/snackbar";
@@ -49,6 +47,7 @@ import VideoCurso from "./video_curso";
 import ResponsiveDashboard from "./responsive_dashboard";
 import { obtenerTokenFCM } from "../../../components/Firebase/firebaseInit";
 import CustomAvatar from "../../../components/CustomAvatar";
+import ABHorizIcon from "../../../Icons/ABHorizIcon";
 
 function DashboarUsuario(props) {
   const classes = useStyles();
@@ -257,26 +256,24 @@ function DashboarUsuario(props) {
 				</Button>
 			</Hidden> */}
       <CssBaseline />
-      <AppBar position="fixed" className={classes.appBar}>
+      <AppBar position="fixed" className={classes.appBar} elevation={0}>
         <Toolbar variant="dense" style={{ padding: "0px 8px" }}>
           <Hidden mdUp>
             <IconButton
               size="small"
               aria-haspopup="true"
               onClick={handleDrawerSecondary}
-              color="inherit"
+              color="primary"
             >
               <MenuIcon />
             </IconButton>
           </Hidden>
           <Hidden smDown>
-            <Box className={classes.logo}>
-              <img
-                alt="logo navbar"
-                src={darkTheme ? ImagenLogoDark : ImagenLogo}
-                className={classes.imagen}
-              />
-            </Box>
+            <ABHorizIcon
+              size={10}
+              color="primary"
+              style={{ marginRight: 10 }}
+            />
           </Hidden>
           <Box ml={3}>
             <Typography className={classes.title} variant="h6" noWrap>
@@ -285,7 +282,7 @@ function DashboarUsuario(props) {
                 target="_blank"
                 rel="noopener"
                 underline="none"
-                color="inherit"
+                color="primary"
               >
                 {curso.course.title ? curso.course.title : ""}
               </LinkMaterial>
@@ -295,7 +292,7 @@ function DashboarUsuario(props) {
           <Hidden smDown>
             <Button
               style={{ textTransform: "none" }}
-              color="inherit"
+              color="primary"
               component={Link}
               to="/"
               className={classes.marginButton}
@@ -304,7 +301,7 @@ function DashboarUsuario(props) {
               Inicio
             </Button>
             <Button
-              color="inherit"
+              color="primary"
               style={{ textTransform: "none" }}
               component={Link}
               to="/mis_cursos"
@@ -322,14 +319,18 @@ function DashboarUsuario(props) {
               aria-controls={menuId}
               aria-haspopup="true"
               onClick={handleProfileMenuOpen}
-              color="inherit"
+              color="primary"
             >
               {!user ? (
                 <CustomAvatar size={30} fontSize={17} />
               ) : !user.imagen ? (
                 <CustomAvatar name={user.name} size={30} fontSize={17} />
               ) : (
-                <Avatar alt="foto de perfil" src={user.imagen} style={{height: 30, width: 30, fontSize: 17}} />
+                <Avatar
+                  alt="foto de perfil"
+                  src={user.imagen}
+                  style={{ height: 30, width: 30, fontSize: 17 }}
+                />
               )}
             </IconButton>
           </Hidden>
@@ -387,14 +388,12 @@ function DashboarUsuario(props) {
             justifyContent="space-between"
             alignItems="center"
           >
-            <Button color="inherit" component={Link} to="/">
-              <Box className={classes.logoResponsive}>
-                <img
-                  alt="logo navbar"
-                  src={darkTheme ? ImagenLogoDark : ImagenLogo}
-                  className={classes.imagen}
-                />
-              </Box>
+            <Button color="primary" component={Link} to="/">
+              <ABHorizIcon
+                size={10}
+                color="primary"
+                style={{ marginRight: 10 }}
+              />
             </Button>
             <IconButton onClick={handleDrawerSecondary}>
               <ArrowBackIosIcon />

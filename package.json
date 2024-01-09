@@ -1,8 +1,8 @@
 {
-  "name": "uniline_front",
+  "name": "abcloud_front",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://uniline.online/",
+  "homepage": "https://abcloud.com.mx/",
   "dependencies": {
     "@date-io/moment": "^1.3.13",
     "@fortawesome/fontawesome-svg-core": "^1.2.34",

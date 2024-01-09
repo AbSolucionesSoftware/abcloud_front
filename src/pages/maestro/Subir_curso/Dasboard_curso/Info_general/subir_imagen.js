@@ -85,7 +85,7 @@ function SubirImagen(props) {
 	const subirImagen = async () => {
 		if (!datos.urlPromotionalImage || !preview) {
 			return;
-		} else if (preview && preview.includes('https://cursos-uniline.s3.us-west-1.amazonaws.com')) {
+		} else if (preview && preview.includes(process.env.REACT_APP_URL_AWS)) {
 			return;
 		}
 		const formData = new FormData();

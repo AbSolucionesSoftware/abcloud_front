@@ -11,7 +11,7 @@ import clienteAxios from "../../../config/axios";
 import { CircularProgress, Divider, Typography } from "@material-ui/core";
 import MessageSnackbar from "../../../components/Snackbar/snackbar";
 import UbicacionNumeroCertificado from "./UbicacionNumeroCer";
-import ULogo from "../../../images/u-normal.png";
+import ABIcon from "../../../Icons/ABIcon";
 
 export default function BuscarUnCertificado() {
   const [certificado, setCertificado] = useState();
@@ -25,8 +25,8 @@ export default function BuscarUnCertificado() {
   });
 
   useEffect(() => {
-		window.scrollTo(0, 0);
-	}, []);
+    window.scrollTo(0, 0);
+  }, []);
 
   const obtenerCertificado = async (e) => {
     e.preventDefault();
@@ -67,22 +67,10 @@ export default function BuscarUnCertificado() {
       />
       <Box my={5}>
         <Box display="flex" my={3}>
-          <Box
-            height="64px"
-            width="64px"
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-          >
-            <img
-              alt="logo-uniline"
-              src={ULogo}
-              style={{ maxHeight: "100%", maxWidth: "100%" }}
-            />
-          </Box>
+          <ABIcon size={4} color="primary" />
           <Box mx={2} mb={2}>
             <Typography variant="h5">Verificación de certificados</Typography>
-            <Typography variant="h6">Cursos UNILINE</Typography>
+            <Typography variant="h6">Cursos de AB Cloud</Typography>
           </Box>
         </Box>
 

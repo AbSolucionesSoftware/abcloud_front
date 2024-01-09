@@ -17,6 +17,7 @@ import clienteAxios from "../../../../config/axios";
 import { NotificationCursoContext } from "../../../../context/NotificationCursoCtx";
 import InputImageDev from "./InputImageDev";
 import InputImage from "./InputImage";
+import urlPage from "../../../../config/url";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -102,7 +103,7 @@ export default function CreateNewModal({ datos, isEditing }) {
     formData.append("sended", sended);
     formData.append("id_course", "");
     formData.append("id_teacher", "");
-    formData.append("teacher_name", "UNILINE");
+    formData.append("teacher_name", "AB Cloud");
 
     if (sended) {
       setLoadingSend(true);
@@ -229,7 +230,7 @@ export default function CreateNewModal({ datos, isEditing }) {
             name="url"
             onChange={getFields}
             value={values.url}
-            placeholder="https://www.uniline.online"
+            placeholder={`${urlPage}/`}
           />
         </DialogContent>
         <DialogActions>

@@ -12,7 +12,7 @@ import { Person } from "@material-ui/icons";
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
-    backgroundColor: theme.palette.navbar,
+    backgroundColor: theme.palette.primary.main,
     position: "fixed",
     zIndex: 9999,
     bottom: 0,

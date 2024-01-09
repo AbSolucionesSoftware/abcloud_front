@@ -11,7 +11,7 @@ export const updateNotifications = async (
     //si no hay en localStorage, se ponen en LS
     if (!localNotifications) {
       return notificaciones;
-      /* localStorage.setItem("notifications_uniline", JSON.stringify(notificaciones)); */
+      /* localStorage.setItem("notifications_abcloud", JSON.stringify(notificaciones)); */
     } else {
       //si hay, entonces compara las notificaciones existentes
       //sacar solo ids de ambos para comparar arrays

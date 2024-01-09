@@ -21,6 +21,7 @@ import clienteAxios from "../../../config/axios";
 import SubirImagenBannerDesk from "./SubirImagenDesk";
 import { CircularProgress } from "@material-ui/core";
 import SubirImagenBannerDevices from "./SubirImagenDev";
+import urlPage from "../../../config/url";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -269,7 +270,7 @@ export default function CrearBanner({
                 fullWidth
                 disabled
                 InputProps={{
-                  startAdornment: "https://uniline.online/curso/",
+                  startAdornment: `${urlPage}/curso/`,
                 }}
                 value={values.course_ref}
               />

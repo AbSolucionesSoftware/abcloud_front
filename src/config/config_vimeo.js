@@ -1,3 +1,5 @@
+import urlPage from './url';
+
 const Vimeo = require('vimeo').Vimeo;
 const client = new Vimeo(
 	'b2af4468710c93e79707cfdbd36e8090a22ba023',
@@ -55,10 +57,10 @@ export const ClientRequestVimeo = (client, uri) => {
         client.request(
             {
                 method: 'PUT',
-                path: uri + '/privacy/domains/uniline.online'
+                path: `${uri}/privacy/domains/abcloud.com.mx`
             },
             function(error, body, status_code, headers) {
-                console.log(uri + ' will only be embeddable on "https://uniline.online".');
+                console.log(`${uri} will only be embeddable on ${urlPage}`);
                 client.request(
                     {
                         method: 'PATCH',
@@ -70,7 +72,7 @@ export const ClientRequestVimeo = (client, uri) => {
                         }
                     },
                     function(error, body, status_code, headers) {
-                        console.log(uri + ' will only be embeddable on "https://uniline.online.');
+                        console.log(`${uri} will only be embeddable on ${urlPage}`);
                     }
                 );
             }

@@ -62,7 +62,7 @@ import Error404 from "../pages/error404";
 import PreguntasUniline from "../pages/maestro/PreguntasUniline/PreguntasUniline";
 import StripeConfirm from "../pages/users/Compra_curso/stripeConfirm";
 import Productos from "../pages/maestro/Productos";
-import Consultoria from "../pages/users/Consultoria";
+//import Consultoria from "../pages/users/Consultoria";
 import DashboardPrincipal from "../pages/maestro/Dashboard_maestro";
 import LinksPago from "../pages/maestro/LinksPago";
 import AppsPage from "../pages/users/Apps";
@@ -350,11 +350,11 @@ const routes = [
         component: StripeConfirm,
         exact: true,
       },
-      {
+      /* {
         path: "/consultoria",
         component: Consultoria,
         exact: true,
-      },
+      }, */
       {
         path: "/apps",
         component: AppsPage,

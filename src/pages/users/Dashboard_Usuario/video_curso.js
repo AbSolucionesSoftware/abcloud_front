@@ -61,16 +61,6 @@ export default function VideoCurso({ props, user }) {
         }
       )
       .then((res) => {
-        /* if (
-          user.rol === "Estudiante" &&
-          parseFloat(res.data.message) >= 100 &&
-          (!curso.inscriptionStudent.questionUniline ||
-            curso.inscriptionStudent.questionUniline === false)
-        ) {
-          props.history.push(
-            `/question-curse-uniline/${curso.course._id}/curso/${curso.course.slug}`
-          );
-        } */
         setUpdate(!update);
         setProgreso(res.data.message);
       })

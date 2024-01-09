@@ -12,7 +12,7 @@ function FloatButton() {
       alignItems: "center",
       gap: theme.spacing(1),
       bottom: theme.spacing(1),
-      right: theme.spacing(0.3),
+      right: theme.spacing(0.5),
       zIndex: 100,
       [theme.breakpoints.down("sm")]: {
         marginBottom: theme.spacing(6),
@@ -25,18 +25,15 @@ function FloatButton() {
       backgroundColor: "#1877f2",
       color: "#fff",
       borderRadius: "50%",
-      fontSize: "50px",
+      fontSize: "45px",
       padding: "8px",
-      [theme.breakpoints.down("sm")]: {
-        fontSize: "45px",
-      },
     },
     ig: {
       background:
         "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%)",
       color: "#fff",
       borderRadius: "50%",
-      fontSize: "50px",
+      fontSize: "45px",
       padding: "8px",
       [theme.breakpoints.down("sm")]: {
         fontSize: "45px",
@@ -46,7 +43,7 @@ function FloatButton() {
       backgroundColor: "#FF0000",
       color: "#fff",
       borderRadius: "50%",
-      fontSize: "50px",
+      fontSize: "45px",
       padding: "8px",
       [theme.breakpoints.down("sm")]: {
         fontSize: "45px",
@@ -56,7 +53,7 @@ function FloatButton() {
       backgroundColor: " #35c42c",
       color: "#fff",
       borderRadius: "50%",
-      fontSize: "50px",
+      fontSize: "45px",
       padding: "8px",
       [theme.breakpoints.down("sm")]: {
         fontSize: "45px",
@@ -69,7 +66,7 @@ function FloatButton() {
   return (
     <Box className={estilo.socialIconsContainer}>
         <Link
-          href="https://www.facebook.com/EscuelaUniline"
+          href="https://www.facebook.com/ConsultoresABsolucionesempresariales/"
           color="inherit"
           target="_blank"
         >
@@ -77,21 +74,21 @@ function FloatButton() {
         </Link>
 
         <Link
-          href="https://www.instagram.com/uniline.online/?hl=es-la"
+          href="https://www.instagram.com/ab_cloud_soluciones/"
           color="inherit"
           target="_blank"
         >
           <Instagram className={estilo.ig} />
         </Link>
         <Link
-          href="https://www.youtube.com/@Unilineonline"
+          href="https://www.youtube.com/@Consultoresabcloud"
           color="inherit"
           target="_blank"
         >
           <YouTube className={estilo.yt} />
         </Link>
         <Link
-          href="https://wa.me/5213171297626"
+          href="https://wa.me/5213173891962"
           color="inherit"
           target="_blank"
         >

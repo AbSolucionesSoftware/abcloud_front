@@ -20,6 +20,7 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import { CursoContext } from "../../../../../context/curso_context";
 import MetaTags from "react-meta-tags";
 import { FileCopy } from "@material-ui/icons";
+import urlPage from "../../../../../config/url";
 
 export default function CompartirTaller({ datosTaller }) {
   const { datos } = useContext(CursoContext);
@@ -33,7 +34,7 @@ export default function CompartirTaller({ datosTaller }) {
 
   const copyPortapapeles = (e) => {
     navigator.clipboard.writeText(
-      `https://uniline.online/curso_taller/${datos.slug}`
+      `${urlPage}/curso_taller/${datos.slug}`
     );
     setMessageCopy(true);
   };
@@ -41,7 +42,7 @@ export default function CompartirTaller({ datosTaller }) {
   return (
     <div>
       <MetaTags>
-        <title>UNILINE</title>
+        <title>AB Cloud</title>
         <meta id="og-title" property="og:title" content={datos.slug} />
         <meta
           id="og-image"
@@ -51,7 +52,7 @@ export default function CompartirTaller({ datosTaller }) {
         <meta
           id="og-url"
           property="og:url"
-          content={`https://uniline.online/curso_taller/${datos.slug}`}
+          content={`${urlPage}/curso_taller/${datos.slug}`}
         />
       </MetaTags>
       <Button
@@ -88,7 +89,7 @@ export default function CompartirTaller({ datosTaller }) {
             <TextField
               color="primary"
               style={{ width: "80%" }}
-              value={`https://uniline.online/curso_taller/${datos.slug}`}
+              value={`${urlPage}/curso_taller/${datos.slug}`}
               name="Link"
               id="link"
               variant="outlined"
@@ -108,7 +109,7 @@ export default function CompartirTaller({ datosTaller }) {
             <Grid item>
               <Box p={1}>
                 <FacebookShareButton
-                  url={`https://uniline.online/curso_taller/${datos.slug}`}
+                  url={`${urlPage}/curso_taller/${datos.slug}`}
                   quote={datosTaller.nameTaller}
                   separator=": "
                 >
@@ -119,7 +120,7 @@ export default function CompartirTaller({ datosTaller }) {
             <Grid item>
               <Box p={1}>
                 <WhatsappShareButton
-                  url={`https://uniline.online/curso_taller/${datos.slug}`}
+                  url={`${urlPage}/curso_taller/${datos.slug}`}
                   title={datosTaller.nameTaller}
                   separator=": "
                 >
@@ -131,7 +132,7 @@ export default function CompartirTaller({ datosTaller }) {
           <Box my={2} mb={3} display="flex" justifyContent="center">
             <QRCode
               size={170}
-              value={`https://uniline.online/curso_taller/${datos.slug}`}
+              value={`${urlPage}/curso_taller/${datos.slug}`}
             />
           </Box>
         </DialogContent>

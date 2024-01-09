@@ -46,7 +46,7 @@ export default function NotificationResponsive() {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
   const notifications = JSON.parse(
-    localStorage.getItem("notifications_uniline")
+    localStorage.getItem("notifications_abcloud")
   );
 
   const count = notifications.filter((res) => !res.read);
@@ -59,7 +59,7 @@ export default function NotificationResponsive() {
         icon={
           <Badge
             badgeContent={count.length}
-            color="secondary"
+            color="primary"
             onClick={() => toggleDrawer()}
           >
             <NotificationsIcon htmlColor="#fff" style={{ fontSize: 30 }} />
@@ -125,7 +125,7 @@ const ItemNotification = ({ notification, notificaciones, index, handleClose }) 
     let notificationToLS = [...notificaciones];
     notificationToLS.splice(index, 1, notificationUpdated);
     localStorage.setItem(
-      "notifications_uniline",
+      "notifications_abcloud",
       JSON.stringify(notificationToLS)
     );
     if (notification.url) window.open(notification.url, '_blank');

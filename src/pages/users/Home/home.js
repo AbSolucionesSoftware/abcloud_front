@@ -9,6 +9,7 @@ import imagenInicio from "../../../images/inicio.jpg";
 import UltimosCursosSubidos from "./Cursos/LatestCourses";
 import PaquetesHome from "../Paquetes/PaquetesHome";
 import FloatButton from "./FloatButton";
+import urlPage from "../../../config/url";
 
 export default function Home(props) {
   useEffect(() => {
@@ -18,7 +19,7 @@ export default function Home(props) {
   return (
     <Box>
       <MetaTags>
-        <title>UNILINE</title>
+        <title>AB Cloud</title>
         <meta
           id="meta-description"
           name="description"
@@ -27,10 +28,10 @@ export default function Home(props) {
         <meta
           id="og-title"
           property="og:title"
-          content="Escuela Al Revés UNILINE"
+          content="AB Cloud"
         />
         <meta id="og-image" property="og:image" content={imagenInicio} />
-        <meta id="og-url" property="og:url" content="https://uniline.online/" />
+        <meta id="og-url" property="og:url" content={`${urlPage}/`} />
       </MetaTags>
       <Banner props={props} />
       <Container maxWidth="lg">

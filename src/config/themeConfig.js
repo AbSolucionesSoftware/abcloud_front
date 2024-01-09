@@ -5,15 +5,18 @@ const theme = createMuiTheme({
 		type: 'light',
 		navbar: '#4e00a0!important',
 		navbarCategories: '#5900B6!important',
+		abprimary: '#238CDF',
+		absecondary: '#6A6969',
+		abtertiary: '#b8b8b8',
 		session: {
 			main: '#E72F2F'
 		},
 		primary: {
 			/* main: '#2196f3', */
-			main: '#4e00a0'
+			main: '#238CDF'
 		},
 		secondary: {
-			main: '#0093ed'
+			main: '#6A6969'
 		},
 		error: {
 			main: '#f44336'

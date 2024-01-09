@@ -21,8 +21,8 @@ import clienteAxios from "../../../config/axios";
 import { Link } from "react-router-dom";
 import { AlternateEmail, GetApp } from "@material-ui/icons";
 import html2pdf from "html2pdf.js";
-import UnilineIcon from "../../../images/unilineAzul.png";
 import MessageSnackbar from "../../../components/Snackbar/snackbar";
+import ABHorizIcon from "../../../Icons/ABHorizIcon";
 
 const useStyles = makeStyles((theme) => ({
   imagen: {
@@ -84,7 +84,7 @@ export default function PagoSuccess(props) {
           const blobUrl = URL.createObjectURL(blob);
           const link = document.createElement("a");
           link.href = blobUrl;
-          link.download = `Recibo pago Uniline.pdf`;
+          link.download = `Recibo pago.pdf`;
           link.click();
           URL.revokeObjectURL(blobUrl);
           setLoadingDownload(false);
@@ -153,12 +153,12 @@ export default function PagoSuccess(props) {
       style={{ backgroundColor: theme.palette.background.paper }}
     >
       <Container maxWidth="md">
-	  <MessageSnackbar
-        open={snackbar.open}
-        mensaje={snackbar.mensaje}
-        status={snackbar.status}
-        setSnackbar={setSnackbar}
-      />
+        <MessageSnackbar
+          open={snackbar.open}
+          mensaje={snackbar.mensaje}
+          status={snackbar.status}
+          setSnackbar={setSnackbar}
+        />
         <Container maxWidth="md">
           <Box
             pt={3}
@@ -258,7 +258,7 @@ const PDFSuccesPayment = ({ data }) => {
               )}
             </Box>
             <Box width={160} className={classes.imgContent}>
-              <img alt="uniline" src={UnilineIcon} className={classes.imagen} />
+              <ABHorizIcon size={10} color="primary" />
             </Box>
           </Box>
           <Box mt={1} />

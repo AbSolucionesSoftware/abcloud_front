@@ -21,6 +21,7 @@ import {
 } from "../../../../config/reuserFunction";
 import ActionsPaquete from "./ActionsPaquete";
 import ContainerCursos from "./ContainerCursos";
+import urlPage from "../../../../config/url";
 
 const useStyles = makeStyles((theme) => ({
   contenedor: {
@@ -105,7 +106,7 @@ export default function VistaPaquete(props) {
   return (
     <Box>
       <MetaTags>
-        <title>UNILINE</title>
+        <title>AB Cloud</title>
         <meta
           id="meta-description-pack"
           name="description"
@@ -116,7 +117,7 @@ export default function VistaPaquete(props) {
         <meta
           id="og-url-pack"
           property="og:url"
-          content={"https://uniline.online/paquete/" + paquete.slug}
+          content={`${urlPage}/curso/${paquete.slug}`}
         />
       </MetaTags>
       <Container className={classes.contenedor} maxWidth="md">

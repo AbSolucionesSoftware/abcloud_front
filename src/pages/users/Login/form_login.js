@@ -274,7 +274,7 @@ function FormLoginUsuario(props) {
       />
       <Box my={2}>
         <Typography variant="h6" align="center">
-          ¡Inicia sesión en Uniline!
+          Iniciar sesión
         </Typography>
       </Box>
       <Box px={5}>
